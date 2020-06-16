@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 import java.util.List;
 
-// Able to hold books, borrowers, library staff, loans, etc
-public class Catalog<T extends Item> {
+// <ID> references the one that's outside
+public class Catalog<T extends Item<ID>, ID extends Number> {
 
 	private List<T> allItems = new ArrayList<T>();
 
-	// Find items
+	// Find everything the catalog has in it
 	public List<T> getAllItems() {
 		return allItems;
 	}
 
-	// Find items
-	public T getItem(T id) {
+	// Find items, by ID, T is an item
+	public T getItem(ID id) {
 		for (T item : allItems) {
 			if (item.getUniqueId().equals(id)) {
 				return item;

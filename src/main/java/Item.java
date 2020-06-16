@@ -1,5 +1,5 @@
-public interface Item {
+public interface Item<ID extends Number> {
 
-	String getUniqueId();
+	ID getUniqueId();
 
 }
